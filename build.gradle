@@ -4,7 +4,6 @@ plugins {
     id 'java'
 }
 
-
 allprojects {
     apply plugin: 'checkstyle'
 
@@ -29,10 +28,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.retry:spring-retry'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     implementation 'org.apache.commons:commons-lang3:3.+'
     implementation 'org.apache.commons:commons-collections4:4.4'
     implementation 'org.apache.httpcomponents:httpclient:4.5.6'
+
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'mysql:mysql-connector-java'
 
     testImplementation 'org.mockito:mockito-core:3.6.0'
     testImplementation 'org.mockito:mockito-junit-jupiter:3.6.0'

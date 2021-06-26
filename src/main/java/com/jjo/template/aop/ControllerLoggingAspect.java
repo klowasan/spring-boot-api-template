@@ -20,7 +20,7 @@ public class ControllerLoggingAspect {
      * @return 戻り値
      * @throws Throwable 例外
      */
-    @Around("@within(org.springframework.web.bind.annotation.RestController)")
+//    @Around("@within(org.springframework.web.bind.annotation.RestController)")
     public Object logProcessingTime(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         StopWatch stopWatch;
         stopWatch = new StopWatch();
