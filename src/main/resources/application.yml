@@ -1,0 +1,10 @@
+com:
+  jjo:
+    client:
+      sample:
+        url: "http://localhost:7443"
+        maxConnectionTotal: 500
+        maxConnectionPerRoute: 200
+        connectionTimeToLiveSec: 600
+        connectTimeout: 2000
+        readTimeout: 120000
