@@ -11,6 +11,7 @@ import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.web.client.RestTemplate;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 @EnableConfigurationProperties(value = {SampleClientProperties.class})
@@ -41,6 +42,7 @@ public class ClientConfig {
         HttpClientBuilder httpClientBuilder = HttpClientBuilder.create()
                 .setMaxConnTotal(properties.getMaxConnectionTotal())
                 .setMaxConnPerRoute(properties.getMaxConnectionPerRoute())
+                .setConnectionTimeToLive(properties.getConnectionTimeToLiveSec(), TimeUnit.SECONDS)
                 .disableAutomaticRetries();
 
         HttpComponentsClientHttpRequestFactory requestFactory =
