@@ -29,6 +29,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.retry:spring-retry'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 
     implementation 'org.apache.commons:commons-lang3:3.+'
     implementation 'org.apache.commons:commons-collections4:4.4'
@@ -48,4 +49,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+task bootRedis(type: Exec) {
+    workingDir "./"
+    executable "./bin/bootRedis.sh"
 }
