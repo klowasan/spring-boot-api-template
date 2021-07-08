@@ -7,13 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import java.math.BigDecimal;
 
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private BigDecimal id;
+
+    @NonNull
+    @Column(unique = true, name = "user_id")
+    private String userId;
 
     @NonNull
     @Column(unique = true)
@@ -24,8 +28,11 @@ public class User {
     private String email;
 
     @NonNull
-    @Column(unique = true)
+    @Column(unique = true, name = "phone_number")
     private String phoneNumber;
+
+    @NonNull
+    private String paasowrd;
 
     private User() {
     }
@@ -36,7 +43,7 @@ public class User {
         this.phoneNumber = phoneNumber;
     }
 
-    public Long getId() {
+    public BigDecimal getId() {
         return id;
     }
 
